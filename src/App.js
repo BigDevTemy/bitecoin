@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import React from 'react';
+import Home from './component/Home'
+import Header from './component/Layout/header'
+import image1 from './images/cartoon/concept11@2x.png'
+import image2 from './images/cartoon/concept23@2x.png'
+import image3 from './images/cartoon/concept26.png'
+export default class App extends React.Component{
+  state = {
+    images:[
+        {
+          url:{image1}
+        },
+        {
+          url:{image2}
+        },
+        {
+          url:{image3}
+        },
+    ]
+  }
+  render(){
+    return (
+      <div className="mycontainer">
+         <Header/>
+         <Home imageUrl={this.state.images}/>
+      </div>
+    );
+  }
+  
 }
 
-export default App;
+
